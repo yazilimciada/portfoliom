@@ -1,0 +1,10 @@
+body{background-color:#33f1ff;}
+a:link{background-color:ffcffe;text-decoration:none;color:red;}
+a:hover{font-size:22px;color:red;}
+#resim1
+{
+	height:250px;
+width:250px;
+margin:0 20px 5px 520px;
+	padding:0 20px 5px 20px; 
+}   	
