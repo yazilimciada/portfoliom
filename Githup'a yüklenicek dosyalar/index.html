@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Insomnia Playground</title>
+    <link rel="icon" href="icon.png" type="image/png">
+    <link rel="stylesheet" href="neon.css">
+    <script src="neon.js" defer></script>
+</head>
+<body class="">
+    <h1 class="neon-title"><strong><i>GÖRMEK İSTEYECEĞİNİZ GÖZ ALICI NEON IŞIKLARI BURADA</i></strong></h1>
+
+    <div class="form-row">
+        <label for="username">Kullanıcı Adı:</label>
+        <input type="text" id="username" name="username" placeholder="Kullanıcı adınız...">
+    </div>
+
+    <div class="form-row">
+        <label for="mail">Mail'inizi Giriniz :</label>
+        <input type="email" id="mail" name="mail" placeholder="ornek@domain.com">
+    </div>
+
+    <div class="form-row">
+        <label for="password">Şifre:</label>
+        <div class="password-wrapper">
+            <input type="password" id="password" name="password" placeholder="Şifreniz...">
+            <button type="button" id="togglePassword" class="eye-btn" aria-label="Şifreyi göster/gizle">
+                <!-- Basit svg göz ikonu; js ile class değiştirilecek -->
+                <svg id="eyeOpen" viewBox="0 0 24 24" width="20" height="20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <path fill="currentColor" d="M12 5c-7 0-11 7-11 7s4 7 11 7 11-7 11-7-4-7-11-7zm0 12a5 5 0 1 1 0-10 5 5 0 0 1 0 10z"/>
+                    <circle cx="12" cy="12" r="2.5" fill="currentColor"/>
+                </svg>
+                <svg id="eyeClosed" viewBox="0 0 24 24" width="20" height="20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="display:none">
+                    <path fill="currentColor" d="M2 3l19 19-1.5 1.5L.5 4.5 2 3zm9.5 6.5c.5.5.5 1.2.5 1.8 0 .6 0 1.3-.5 1.8l-3-3c.5-.6 1.2-1 1.8-1zM12 5c7 0 11 7 11 7-1.5 2.6-4 4.6-6.8 5.8l-1.7-1.7C16.8 15.6 18.6 14 19.9 12c-1.2-2-3.2-3.6-5.6-4.3L12 6.8V5z"/>
+                </svg>
+            </button>
+        </div>
+    </div>
+
+    <div class="form-row">
+        <label for="renkler">Tarzınızı seçin:</label>
+        <select id="renkler" name="renkler">
+            <option value="kirmizi-mavi">Kırmızı-Mavi</option>
+            <option value="su-yesili-su-mavisi">Su Yeşili - Su Mavisi</option>
+            <option value="sari-kirmizi">Sarı - Kırmızı</option>
+            <option value="mavi-pembe">Mavi - Pembe</option>
+            <option value="pembe-mor">Pembe - Mor</option>
+        </select>
+    </div>
+
+    <div class="form-row">
+        <button type="button" id="gonder" class="neon-btn">Gönder</button>
+    </div>
+</body>
+</html>

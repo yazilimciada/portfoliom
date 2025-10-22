@@ -1,0 +1,196 @@
+/* ---------- Temel değişkenler (varsayılan) ---------- */
+:root {
+    --bg-gradient: linear-gradient(135deg, #0d1117 0%, #0d1117 100%);
+    --page-text: #cdd9e5;
+    --accent: #7ce4ff;
+    --accent2: #ff6ec7;
+    --input-bg: #0d1117;
+    --input-text: #cdd9e5;
+}
+
+/* Temaya göre değişen değişkenler */
+body.kirmizi-mavi {
+    --bg-gradient: linear-gradient(135deg, #ff0040 0%, #0040ff 100%);
+    --page-text: #ffffff;
+    --input-text: #ffffff;
+    --accent: #ff6a88;
+    --accent2: #4fb1ff;
+}
+body.su-yesili-su-mavisi {
+    --bg-gradient: linear-gradient(135deg, #00ffc2 0%, #00c0ff 100%);
+    --page-text: #06121a;
+    --input-text: #06121a;
+    --accent: #00ffd1;
+    --accent2: #00c4ff;
+}
+body.sari-kirmizi {
+    --bg-gradient: linear-gradient(135deg, #ffea00 0%, #ff0040 100%);
+    --page-text: #06121a;
+    --input-text: #06121a;
+    --accent: #ffd400;
+    --accent2: #ff4a6e;
+}
+body.mavi-pembe {
+    --bg-gradient: linear-gradient(135deg, #0040ff 0%, #ff40ff 100%);
+    --page-text: #ffffff;
+    --input-text: #ffffff;
+    --accent: #7fb2ff;
+    --accent2: #ff7bd8;
+}
+body.pembe-mor {
+    --bg-gradient: linear-gradient(135deg, #ff40ff 0%, #800080 100%);
+    --page-text: #ffffff;
+    --input-text: #ffffff;
+    --accent: #ff8ae6;
+    --accent2: #b37fff;
+}
+
+/* ---------- Sayfa düzeni ---------- */
+body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: 'Segoe UI', Roboto, Arial, sans-serif;
+    background: var(--bg-gradient);
+    color: var(--page-text);
+    text-align: center;
+    padding: 60px 20px;
+    transition: background 0.6s ease, color 0.5s ease;
+}
+
+/* Neon başlık */
+.neon-title {
+    font-size: 34px;
+    margin: 0 0 40px 0;
+    letter-spacing: 1px;
+    color: var(--page-text);
+    text-shadow:
+        0 0 6px var(--accent),
+        0 0 14px var(--accent2),
+        0 0 30px var(--accent2);
+    transition: text-shadow 0.4s ease;
+}
+
+/* Form satırları */
+.form-row {
+    margin: 14px auto;
+    max-width: 520px;
+    text-align: left;
+}
+
+/* Label */
+.form-row label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 600;
+    color: var(--page-text);
+}
+
+/* Input / select / button ortak stil */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+select {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 12px 44px 12px 12px; /* password için yer bırak */
+    border-radius: 10px;
+    border: 2px solid rgba(255,255,255,0.06);
+    background: var(--input-bg);
+    color: var(--input-text);
+    font-size: 15px;
+    outline: none;
+    transition: box-shadow 0.25s ease, border-color 0.25s ease, color 0.25s ease, background 0.25s ease;
+}
+
+/* Select daha dar padding */
+select {
+    padding-right: 12px;
+}
+
+/* Hover / focus (neon glow) */
+input:focus, select:focus {
+    border-color: var(--accent);
+    box-shadow: 0 0 12px var(--accent), 0 0 28px var(--accent2);
+    color: var(--input-text);
+}
+
+/* Buton */
+.neon-btn {
+    display: inline-block;
+    padding: 12px 28px;
+    border-radius: 12px;
+    background: linear-gradient(90deg, var(--accent), var(--accent2));
+    color: #0d1117;
+    border: none;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.4), 0 0 18px rgba(255,255,255,0.03) inset;
+    transition: transform 0.15s ease, box-shadow 0.15s ease, opacity 0.15s ease;
+}
+
+/* Buton hover etkisi */
+.neon-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5), 0 0 24px var(--accent);
+}
+
+/* ---------- Şifre göz butonu ---------- */
+.password-wrapper {
+    position: relative;
+    display: block;
+}
+
+.password-wrapper input {
+    padding-right: 48px; /* sağda göz butonu için boşluk */
+}
+
+.eye-btn {
+    position: absolute;
+    right: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    border: none;
+    background: transparent;
+    padding: 6px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: var(--accent);
+    border-radius: 6px;
+    transition: background 0.15s ease, transform 0.08s ease;
+}
+.eye-btn:hover {
+    background: rgba(255,255,255,0.03);
+    transform: translateY(-50%) scale(1.05);
+}
+/* svg currentColor kullanıyor -> otomatik renk alır */
+
+/* Responsive küçük ekran */
+@media (max-width: 520px) {
+    .neon-title { font-size: 22px; }
+    .form-row { padding: 0 10px; }
+}
+
+/* Küçük estetik detay: seçili tema uygulandığı zaman input'ların sınırına daha belirgin glow */
+body.kirmizi-mavi input:focus,
+body.su-yesili-su-mavisi input:focus,
+body.sari-kirmizi input:focus,
+body.mavi-pembe input:focus,
+body.pembe-mor input:focus {
+    box-shadow: 0 0 14px var(--accent), 0 0 30px var(--accent2);
+}
+/* Küçük ekranlar - telefon */
+@media (max-width: 600px) {
+    .neon-title { font-size: 22px; text-align: center; }
+    .form-row { width: 90%; margin: 10px auto; }
+    input, select, .neon-btn { font-size: 14px; padding: 10px; }
+    .password-wrapper input { padding-right: 40px; }
+}
+
+/* Tabletler için */
+@media (min-width: 601px) and (max-width: 900px) {
+    .neon-title { font-size: 28px; }
+    .form-row { width: 80%; margin: 12px auto; }
+    input, select, .neon-btn { font-size: 15px; padding: 12px; }
+}
